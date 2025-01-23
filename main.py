@@ -32,15 +32,6 @@ class InstaFollower:
 
         # Using contains() and text() to find button w/ certain text cause XPATH and selectors change every time you load the page
         time.sleep(3)
-        # save_login_prompt = self.driver.find_element(by=By.XPATH, value="//div[contains(text(), 'Not now')]")
-        # if save_login_prompt:
-        #     save_login_prompt.click()
-        #
-        # time.sleep(2)
-        # notifications_prompt = self.driver.find_element(by=By.XPATH, value="// button[contains(text(), 'Not Now')]")
-        # if notifications_prompt:
-        #     notifications_prompt.click()
-
 
     def find_followers(self):
         time.sleep(5)
@@ -58,8 +49,7 @@ class InstaFollower:
         modal_xpath = "/html/body/div[5]/div[2]/div/div/div[1]/div/div[2]/div/div/div/div/div[2]/div/div/div[3]"
         modal = self.driver.find_element(by=By.XPATH, value=modal_xpath)
         for i in range(5):
-            # executing some Javascript
-            # using Javascript to say: "scroll the top of the modal (popup) element to the bottom height of the modal (popup)"
+            # use JS to "scroll the top of the modal (popup) element to the bottom height of the modal (popup)"
             self.driver.execute_script("arguments[0].scrollTop = arguments[0].scrollHeight", modal)
 
             time.sleep(0.5)
